@@ -17,9 +17,11 @@ return new class extends Migration
             $table->string('brand', 100);
             $table->string('departure_station', 50);
             $table->dateTime('departure_date');
+            $table->dateTime('departure_time');
             $table->string('arrival_station', 50);
             $table->dateTime('arrival_date');
-            $table->tinyInteger('number_of_carriages');
+            $table->dateTime('arrival_time');
+            $table->tinyInteger('carriages');
             $table->boolean('in_time')->default(true);
             $table->boolean('deleted')->default(false);
             $table->timestamps();

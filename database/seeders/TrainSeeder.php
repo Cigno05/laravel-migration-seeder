@@ -26,12 +26,12 @@ class TrainSeeder extends Seeder
             $new_train->train_code = $faker->unique()->bothify('??########') ;
             $new_train->brand = $faker->randomElement($brands) ;
             $new_train->departure_station = $faker->randomElement($cities);
-            // $new_train->departure_time = $faker->time();
+            $new_train->departure_time = $faker->dateTimeBetween('-1 week', '+3 weeks');
             $new_train->departure_date = $faker->dateTimeBetween('-1 week', '+3 weeks');
             $new_train->arrival_station = $faker->randomElement($cities);
-            // $new_train->arrival_time = $faker->time($new_train->departure_time, '+1 hour');
+            $new_train->arrival_time = $faker->dateTimeInInterval($new_train->departure_time, '+12 hours');
             $new_train->arrival_date = $faker->dateTimeBetween('-1 week', '+3 weeks');
-            $new_train->number_of_carriages = $faker->numberBetween(1,20);
+            $new_train->carriages = $faker->numberBetween(1,20);
             $new_train->in_time = $faker->boolean();
             $new_train->deleted = $faker->boolean();
 

@@ -20,6 +20,7 @@ Train - Home
             <th>Data arrivo</th>
             <th>Orario Arrivo</th>
             <th>Rispetto dell'orario</th>
+            <th>Info</th>
         </thead>
         @foreach ($trains as $train)
         <tbody>
@@ -30,7 +31,8 @@ Train - Home
             <td>{{$train->arrival_station}}</td>
             <td>{{$train->arrival_date}}</td>
             <td>{{$train->arrival_time}}</td>
-            <td>{{$train->in_time}}</td>
+            <td>{{$train->in_time === 1 ? 'In Orario' : 'In Ritardo'}}</td>
+            <td>{{$train->deleted === 1 ? 'Cancellato' : ''}}</td>
         </tbody>
         @endforeach
     </table>
@@ -45,6 +47,7 @@ Train - Home
             <th>Data arrivo</th>
             <th>Orario Arrivo</th>
             <th>Rispetto dell'orario</th>
+            <th>Info</th>
         </thead>
         @foreach ($trains_today as $train)
         <tbody>
@@ -55,7 +58,8 @@ Train - Home
             <td>{{$train->arrival_station}}</td>
             <td>{{$train->arrival_date}}</td>
             <td>{{$train->arrival_time}}</td>
-            <td>{{$train->in_time}}</td>
+            <td>{{$train->in_time === 1 ? 'In Orario' : 'In Ritardo'}}</td>
+            <td>{{$train->deleted === 1 ? 'Cancellato' : ''}}</td>
         </tbody>
         @endforeach
     </table>
@@ -70,6 +74,7 @@ Train - Home
             <th>Data arrivo</th>
             <th>Orario Arrivo</th>
             <th>Rispetto dell'orario</th>
+            <th>Info</th>
         </thead>
         @foreach ($trains_gone as $train)
         <tbody>
@@ -80,7 +85,8 @@ Train - Home
             <td>{{$train->arrival_station}}</td>
             <td>{{$train->arrival_date}}</td>
             <td>{{$train->arrival_time}}</td>
-            <td>{{$train->in_time}}</td>
+            <td>{{$train->in_time === 1 ? 'In Orario' : 'In Ritardo'}}</td>
+            <td>{{$train->deleted === 1 ? 'Cancellato' : ''}}</td>
         </tbody>
         @endforeach
     </table>
