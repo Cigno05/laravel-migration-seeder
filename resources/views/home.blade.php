@@ -2,7 +2,7 @@
 
 @section('pageTitle')
 
-Home
+Train - Home
 
 @endsection
 
